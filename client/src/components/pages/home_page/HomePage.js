@@ -5,6 +5,7 @@ import Footer from '../../Footer';
 import axios from 'axios';
 import './HomePage.css';
 
+import {Row, Col} from 'reactstrap';
 class HomePage extends Component {
 
   constructor(props) {
@@ -35,15 +36,21 @@ class HomePage extends Component {
   }
 
   render() {
+    
     const Listings = this.state.listings.map((listing) => {
-      return !listing.complete ? <JobListing key={listing._id} data={listing}/> : null;
+      return !listing.complete ?<JobListing key={listing._id} data={listing}/> : null;
     });
     return (
       <div className="HomePage">
         <Header />
-        <h1 className="homepage-header">Current Job Listings</h1>
-      	<div className="job-listings-layout">
-      	{ Listings }
+        <h1 style={{
+          display:'flex',
+          justifyContent:'center',
+          alignItems: 'center',
+          height:'2em'
+        }}>Current Job Listings</h1>
+        <div style={{padding:'1em'}}>
+          {Listings}
         </div>
         <Footer />
       </div>
