@@ -4,3 +4,4 @@ jobmelon.iml
 node_modules/
 package-lock.json
 client/debug.log
+jobmelon_users
